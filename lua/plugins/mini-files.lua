@@ -1,7 +1,12 @@
 return {
-{ 'echasnovski/mini.files',
+ 'echasnovski/mini.files',
 version = false,
-enabled= require('nixCatsUtils').lazyAdd { 'utils', 'mini-files' },
-opts = {},
-}
+enabled= require('nixCatsUtils').lazyAdd(true, true),
+  event = "VeryLazy",
+opts = {
+mappings = {
+    synchronize = '-',
+  },
+},
+vim.keymap.set('n', '-', ':lua MiniFiles.open()<CR>', { desc = 'MiniFiles' })
 }
