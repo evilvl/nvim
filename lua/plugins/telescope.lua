@@ -1,6 +1,7 @@
 return {
   'nvim-telescope/telescope.nvim',
-  enabled = require('nixCatsUtils').lazyAdd { 'utils', 'telescope' },
+  enabled = require('nixCatsUtils').lazyAdd(true,true),
+  event = "VeryLazy",
   dependencies = {
     'nvim-lua/plenary.nvim',
     { -- If encountering errors, see telescope-fzf-native README for installation instructions

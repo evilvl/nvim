@@ -1,4 +1,5 @@
 return {
-  {import = "plugins/mini"},
   {import = "plugins/ui"},
+  {import = "plugins/utils"},
+  {import = "plugins/completion"},
  }
