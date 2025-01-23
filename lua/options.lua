@@ -37,3 +37,6 @@ vim.o.termguicolors = true
 -- vim.opt.listchars = { tab = '» ', nbsp = '␣' }
 -- hide ~ simbol
 vim.opt.fillchars = { eob = " " }
+-- format
+vim.o.encoding = "utf-8"
+vim.o.fileencoding = "utf-8"

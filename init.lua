@@ -1,5 +1,6 @@
 require("keymaps")
 require("options")
+require("autocommands")
 
 if require('nixCatsUtils').isNixCats then
   local allPlugins = require('nixCats').pawsible.allPlugins
