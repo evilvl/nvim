@@ -1,3 +1,3 @@
 vim.g.mapleader = " "
--- clipboard 
-vim.opt.clipboard = 'unnamedplus'
+-- clipboard
+vim.opt.clipboard = "unnamedplus"
