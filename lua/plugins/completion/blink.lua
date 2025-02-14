@@ -7,7 +7,7 @@ return {
     keymap = { preset = 'default',
   ['<Up>'] = { 'select_prev', 'fallback' },
   ['<Down>'] = { 'select_next', 'fallback' },
-  ['<Tab>'] = { 'select_and_accept', 'fallback' },
+  ['<CR>'] = { 'select_and_accept', 'fallback' },
   ['<escape>'] = { 'hide', 'fallback' },
   cmdline = {
   ['<Up>'] = { 'select_prev', 'fallback' },

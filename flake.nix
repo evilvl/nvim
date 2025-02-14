@@ -5,7 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
   };
-
   outputs =
     {
       self,
@@ -18,18 +17,13 @@
       luaPath = "${./.}";
       forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
       extra_pkg_config = {
-         # allowUnfree = true;
+        # allowUnfree = true;
       };
 
-      dependencyOverlays = # (import ./overlays inputs) ++
-        [
-          # This overlay grabs all the inputs named in the format
-          # `plugins-<pluginName>`
-          # Once we add this overlay to our nixpkgs, we are able to
-          # use `pkgs.neovimPlugins`, which is a set of our plugins.
-          (utils.standardPluginOverlay inputs)
-        ];
-
+      dependencyOverlays = [
+        (utils.standardPluginOverlay inputs)
+      ];
+      plugins = import ./plugins.nix;
       categoryDefinitions =
         {
           pkgs,
@@ -41,211 +35,58 @@
           ...
         }@packageDef:
         {
-          # lspsAndRuntimeDeps:
-          # this section is for dependencies that should be available
-          # at RUN TIME for plugins. Will be available to PATH within neovim terminal
-          # this includes LSPs
           lspsAndRuntimeDeps = with pkgs; {
             general = [
               # fd
               # fzf
               # nix-doc
               # nixd
-              # nixfmt-rfc-style
+              nixfmt-rfc-style
               # ripgrep
             ];
 
             programming = {
               lsp = [
-              #  bash-language-server
-              #  clang-tools
-              #  gopls
-              #  jdt-language-server
-              lua-language-server
-              #  neocmakelsp
-              #  pyright
-              #  rust-analyzer
+                #  bash-language-server
+                #  clang-tools
+                #  gopls
+                #  jdt-language-server
+                lua-language-server
+                #  neocmakelsp
+                #  pyright
+                #  rust-analyzer
               ];
 
               linting = [
-              #  shellcheck
-              #  ruff
+                #  shellcheck
+                #  ruff
               ];
 
               formatting = [
                 stylua
-              #  isort
+                #  isort
               ];
 
               debug = [
-              #gdb
+                #gdb
               ];
             };
 
             markdown = [
 
-          # markdownlint-cli
+              # markdownlint-cli
             ];
 
             latex = [
-            # zathura
+              # zathura
             ];
 
             plantuml = [
-            # plantuml
+              # plantuml
             ];
           };
 
           # This is for plugins that will load at startup without using packadd:
-          startupPlugins = with pkgs.vimPlugins; {
-            general = {
-              colorschemes = [
-              #tokyonight-nvim
-              ];
-
-              statusLine = [
-                # lualine-nvim
-                # nvim-web-devicons
-              ];
-
-              # lazy = [ lazy-nvim ];
-            };
-
-            completion = [
-              #blink-cmp
-
-              #luasnip
-              #friendly-snippets
-            ];
-
-            programming = {
-              lsp = [
-                #fidget-nvim
-                #lazydev-nvim
-                #nvim-jdtls
-                #nvim-lspconfig
-                #otter-nvim
-              ];
-
-              linting = [
-                #nvim-lint
-              ];
-
-              formatting = [
-                #conform-nvim
-              ];
-
-              debug = [
-                #nvim-dap
-                #nvim-dap-ui
-                #nvim-nio
-              ];
-            };
-
-            treesitter = [
-              # nvim-treesitter-textobjects
-              # nvim-treesitter.withAllGrammars
-            ];
-
-            git = {
-             # gitsigns = [ gitsigns-nvim ];
-              neogit = [
-              #  neogit
-              #  plenary-nvim
-              #  diffview-nvim
-              #  telescope-nvim
-              ];
-            };
-
-            ui = {
-              colorscheme = [
-               # catppuccin-nvim
-              ];
-              alpha = [
-               # alpha-nvim
-               # nvim-web-devicons
-                # which-key-nvim
-
-              ];
-
-              indent-blankline = [
-               # indent-blankline-nvim
-              ];
-
-              noice = [
-               # noice-nvim
-               # nui-nvim
-              ];
-
-              todo-comments = [
-               # plenary-nvim
-               # todo-comments-nvim
-              ];
-
-            };
-
-            utils = {
-             # mini-pairs = [ mini-pairs ];
-
-             # mini-bracketed = [ mini-bracketed ];
-
-             # codesnap = [ codesnap-nvim ];
-
-             # colorizer = [ nvim-colorizer-lua ];
-
-              # comment = [ comment-nvim ];
-
-              harpoon = [
-                # harpoon2
-                # plenary-nvim
-              ];
-
-              # mini-ai = [ mini-ai ];
-
-              # mini-surround = [ mini-surround ];
-
-              oil = [
-                # nvim-web-devicons
-                # oil-nvim
-              ];
-
-              telescope = [
-                # telescope-nvim
-                # plenary-nvim
-                # nvim-web-devicons
-                # telescope-fzf-native-nvim
-                # telescope-ui-select-nvim
-              ];
-
-              # vim-tmux-navigator = [ vim-tmux-navigator ];
-
-              # toggleterm = [ toggleterm-nvim ];
-
-              ufo = [
-              #  nvim-ufo
-              #  promise-async
-              ];
-            };
-
-            markdown = {
-             # markdown-preview = [ markdown-preview-nvim ];
-              markview = [
-              #  markview-nvim
-               # nvim-web-devicons
-              ];
-            };
-
-            # latex = [ vimtex ];
-
-            # plantuml = [ plantuml-syntax ];
-          };
-
-          # not loaded automatically at startup.
-          # use with packadd and an autocommand in config to achieve lazy loading
-          # NOTE: this template is using lazy.nvim so, which list you put them in is irrelevant.
-          # startupPlugins or optionalPlugins, it doesnt matter, lazy.nvim does the loading.
-          # I just put them all in startupPlugins. I could have put them all in here instead.
-          optionalPlugins = { };
 
           # shared libraries to be added to LD_LIBRARY_PATH
           # variable available to nvim runtime
@@ -300,7 +141,6 @@
               # IMPORTANT:
               # your alias may not conflict with your other packages.
               aliases = [
-                "nixcats"
                 "nvim"
                 "vim"
                 "nv"
