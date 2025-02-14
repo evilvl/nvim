@@ -4,10 +4,6 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     nixCats.url = "github:BirdeeHub/nixCats-nvim";
-
-    # neovim-nightly-overlay = {
-    #   url = "github:nix-community/neovim-nightly-overlay";
-    # };
   };
 
   outputs =
@@ -22,7 +18,7 @@
       luaPath = "${./.}";
       forEachSystem = utils.eachSystem nixpkgs.lib.platforms.all;
       extra_pkg_config = {
-        # allowUnfree = true;
+         # allowUnfree = true;
       };
 
       dependencyOverlays = # (import ./overlays inputs) ++
@@ -104,7 +100,6 @@
           startupPlugins = with pkgs.vimPlugins; {
             general = {
               colorschemes = [
-
               #tokyonight-nvim
               ];
 
@@ -113,7 +108,7 @@
                 # nvim-web-devicons
               ];
 
-              lazy = [ lazy-nvim ];
+              # lazy = [ lazy-nvim ];
             };
 
             completion = [
@@ -163,9 +158,9 @@
             };
 
             ui = {
-             colorscheme = [
- # catppuccin-nvim
- ];
+              colorscheme = [
+               # catppuccin-nvim
+              ];
               alpha = [
                # alpha-nvim
                # nvim-web-devicons
