@@ -65,7 +65,7 @@
               #  clang-tools
               #  gopls
               #  jdt-language-server
-              #  lua-language-server
+              lua-language-server
               #  neocmakelsp
               #  pyright
               #  rust-analyzer
@@ -77,7 +77,7 @@
               ];
 
               formatting = [
-              #  stylua
+                stylua
               #  isort
               ];
 
@@ -148,8 +148,8 @@
             };
 
             treesitter = [
-              nvim-treesitter-textobjects
-              nvim-treesitter.withAllGrammars
+              # nvim-treesitter-textobjects
+              # nvim-treesitter.withAllGrammars
             ];
 
             git = {
@@ -164,12 +164,12 @@
 
             ui = {
              colorscheme = [
- catppuccin-nvim
- ]
+ # catppuccin-nvim
+ ];
               alpha = [
                # alpha-nvim
                # nvim-web-devicons
-                which-key-nvim
+                # which-key-nvim
 
               ];
 
@@ -210,19 +210,19 @@
               # mini-surround = [ mini-surround ];
 
               oil = [
-                nvim-web-devicons
-                oil-nvim
+                # nvim-web-devicons
+                # oil-nvim
               ];
 
               telescope = [
-                telescope-nvim
-                plenary-nvim
-                nvim-web-devicons
-                telescope-fzf-native-nvim
-                telescope-ui-select-nvim
+                # telescope-nvim
+                # plenary-nvim
+                # nvim-web-devicons
+                # telescope-fzf-native-nvim
+                # telescope-ui-select-nvim
               ];
 
-              vim-tmux-navigator = [ vim-tmux-navigator ];
+              # vim-tmux-navigator = [ vim-tmux-navigator ];
 
               # toggleterm = [ toggleterm-nvim ];
 
@@ -309,7 +309,7 @@
                 "nvim"
                 "vim"
                 "nv"
-                "v"
+                "n"
               ];
               # neovim-unwrapped = inputs.neovim-nightly-overlay.packages.${pkgs.system}.neovim;
             };
