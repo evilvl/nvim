@@ -1,6 +1,7 @@
 -- Load configuration modules
-require("core")
-
+require("core.options")
+require("core.keymaps")
+require("core.autocommands")
 -- Check if running under nixCats
 if require('nixCatsUtils').isNixCats then
   local allPlugins = require('nixCats').pawsible.allPlugins
@@ -21,7 +22,6 @@ end
 -- Configuration options for lazy.nvim
 local lazyOptions = {
   lockfile = getLockfilePath(),
-  },
 }
 
 -- Setup lazy.nvim with the merged plugin list and options
