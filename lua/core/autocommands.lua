@@ -5,3 +5,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 		vim.highlight.on_yank()
 	end,
 })
+
+vim.api.nvim_create_autocmd("User", {
+	pattern = "TelescopePreviewerLoaded",
+	callback = function(args)
+		vim.wo.wrap = true
+		vim.wo.breakindent = false
+	end,
+})

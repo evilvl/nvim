@@ -30,6 +30,24 @@ return {
 					require("telescope.themes").get_ivy(),
 				},
 			},
+			defaults = {
+				layout_strategy = "horizontal",
+				layout_config = {
+					horizontal = {
+						mirror = false,
+						width = 0.9, -- Ширина окна (0.8 = 80% от ширины экрана)
+						height = 0.9, -- Высота окна (0.8 = 80% от высоты экрана)
+						prompt_position = "bottom",
+						preview_width = 0.7,
+					},
+					vertical = {
+						mirror = false,
+						width = 0.8, -- Ширина окна (0.8 = 80% от ширины экрана)
+						height = 0.8, -- Высота окна (0.8 = 80% от высоты экрана)
+						prompt_position = "top",
+					},
+				},
+			},
 		})
 
 		-- Enable Telescope extensions if they are installed
