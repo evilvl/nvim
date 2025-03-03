@@ -50,7 +50,7 @@
                 #  clang-tools
                 #  gopls
                 #  jdt-language-server
-            nixfmt-rfc-style
+                nixfmt-rfc-style
                 lua-language-server
                 #  neocmakelsp
                 #  pyright
