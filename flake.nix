@@ -41,7 +41,6 @@
               # fzf
               # nix-doc
               # nixd
-              nixfmt-rfc-style
               # ripgrep
             ];
 
@@ -51,6 +50,7 @@
                 #  clang-tools
                 #  gopls
                 #  jdt-language-server
+            nixfmt-rfc-style
                 lua-language-server
                 #  neocmakelsp
                 #  pyright
@@ -199,7 +199,9 @@
         devShells = {
           default = pkgs.mkShell {
             name = defaultPackageName;
-            packages = [ defaultPackage ];
+            packages = [
+              defaultPackage
+            ];
             inputsFrom = [ ];
             shellHook = '''';
           };

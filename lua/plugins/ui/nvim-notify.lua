@@ -4,6 +4,7 @@ return {
 	event = "VeryLazy",
 	opts = {
 		fps = 60,
+		background_colour = "#000000",
 		render = "wrapped-compact",
 		stages = "fade_in_slide_out",
 		level = 2,
