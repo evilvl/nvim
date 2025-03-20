@@ -23,7 +23,6 @@
       dependencyOverlays = [
         (utils.standardPluginOverlay inputs)
       ];
-      plugins = import ./plugins.nix;
 
       categoryDefinitions =
         {
@@ -45,6 +44,7 @@
 
             formatting = [
               stylua
+              nixd
             ];
 
             linting = [ ];
