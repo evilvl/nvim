@@ -23,6 +23,7 @@ return {
 				},
 			},
 			bashls = {},
+			jdtls = {},
 		},
 	},
 	config = function(_, opts)
