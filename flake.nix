@@ -37,9 +37,9 @@
         {
           lspsAndRuntimeDeps = with pkgs; {
             lsp = [
-              jdt-language-server
               nixfmt-rfc-style
               lua-language-server
+              gopls
             ];
 
             formatting = [
