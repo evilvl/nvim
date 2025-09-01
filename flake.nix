@@ -131,7 +131,7 @@
       packageDefinitions = {
         # These are the names of your packages
         # you can include as many as you wish.
-        nixCats =
+        evim =
           { pkgs, ... }:
           {
             # they contain a settings set defined above
@@ -166,7 +166,7 @@
       };
       # In this section, the main thing you will need to do is change the default package name
       # to the name of the packageDefinitions entry you wish to use as the default.
-      defaultPackageName = "nixCats";
+      defaultPackageName = "evim";
     in
 
     # see :help nixCats.flake.outputs.exports
