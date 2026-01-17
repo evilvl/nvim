@@ -6,7 +6,7 @@ require("core.autocommands")
 -- Check if running under nixCats
 if require("nixCatsUtils").isNixCats then
 	local allPlugins = require("nixCats").pawsible.allPlugins
-	puginList = require("nixCatsUtils.lazyCat").mergePluginTables(allPlugins.start, allPlugins.opt)
+	pluginList = require("nixCatsUtils.lazyCat").mergePluginTables(allPlugins.start, allPlugins.opt)
 	nixLazyPath = allPlugins.start[ [[lazy.nvim]] ]
 end
 
