@@ -41,7 +41,7 @@
               # fzf
               # nix-doc
               # nixd
-              nixfmt-rfc-style
+              nixfmt
               # ripgrep
             ];
 
@@ -201,7 +201,7 @@
             name = defaultPackageName;
             packages = [ defaultPackage ];
             inputsFrom = [ ];
-            shellHook = '''';
+            shellHook = "";
           };
         };
 
