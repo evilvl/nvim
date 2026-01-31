@@ -58,7 +58,7 @@
     };
     ui = {
       colorscheme = [
-        catppuccin-nvim
+        # catppuccin-nvim
       ];
       alpha = [
         # alpha-nvim

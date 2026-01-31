@@ -1,7 +1,7 @@
 return {
 	"catppuccin/nvim",
 	name = "catppuccin-nvim",
-	enabled = require("nixCatsUtils").enableForCategory("ui.colorscheme.catppuccin-nvim", true),
+	dev = require("nixCatsUtils").lazyAdd(false, true),
 	config = function()
 		vim.cmd.colorscheme("catppuccin-mocha")
 	end,
