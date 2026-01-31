@@ -1,6 +1,6 @@
 return {
 	"neovim/nvim-lspconfig",
-	enabled = require("nixCatsUtils").lazyAdd(true, true),
+	enabled = require("nixCatsUtils").lazyAdd(false, false),
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		{ "j-hui/fidget.nvim", opts = {} },

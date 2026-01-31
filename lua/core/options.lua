@@ -17,14 +17,14 @@ vim.opt.smartcase = true -- Override ignorecase if search pattern contains upper
 
 -- Number Settings
 vim.o.number = true -- Show line numbers
-vim.o.relativenumber = false -- Do not show relative line numbers
+vim.o.relativenumber = true -- Do not show relative line numbers
 
 -- Cursor Line and Scrolling
 vim.opt.cursorline = true -- Highlight the current line
 vim.opt.scrolloff = 8 -- Keep 8 lines visible above and below the cursor
 
 -- Mode Display
--- vim.opt.showmode = false     -- Do not show the current mode
+vim.opt.showmode = false -- Do not show the current mode
 
 -- Indentation
 vim.opt.breakindent = true -- Wrap lines at a breakindent
