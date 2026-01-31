@@ -48,7 +48,6 @@
       # nvim-treesitter.withAllGrammars
     ];
     git = {
-      # gitsigns = [ gitsigns-nvim ];
       neogit = [
         # neogit
         # plenary-nvim
@@ -58,7 +57,6 @@
     };
     ui = {
       colorscheme = [
-        # catppuccin-nvim
       ];
       alpha = [
         # alpha-nvim
