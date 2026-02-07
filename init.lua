@@ -2,6 +2,7 @@
 require("core.options")
 require("core.keymaps")
 require("core.autocommands")
+require("core.colors")
 
 -- Check if running under nixCats
 if require("nixCatsUtils").isNixCats then
