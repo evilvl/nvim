@@ -1,2 +1,7 @@
--- No colorscheme loaded - using default
-return {}
+return {
+	{
+		"RRethy/base16-nvim",
+		enabled = require("nixCatsUtils").lazyAdd(true, true),
+		event = "VeryLazy",
+	},
+}
