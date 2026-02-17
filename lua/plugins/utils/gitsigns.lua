@@ -1,5 +1,3 @@
-local enabled = require("nixCatsUtils").lazyAdd(true, true)
-
 return {
 	"lewis6991/gitsigns.nvim",
 	enabled = enabled,

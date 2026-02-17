@@ -1,7 +1,6 @@
 return {
 	"saghen/blink.cmp",
 	version = "v0.10.0",
-	enabled = require("nixCatsUtils").lazyAdd(true, true),
 	dependencies = { "rafamadriz/friendly-snippets" },
 	opts = {
 		keymap = {

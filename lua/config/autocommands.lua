@@ -13,6 +13,7 @@ vim.api.nvim_create_autocmd("User", {
 		vim.wo.breakindent = false
 	end,
 })
+
 vim.api.nvim_create_autocmd("VimEnter", {
 	callback = function()
 		vim.opt.cursorline = true
