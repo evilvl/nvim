@@ -15,7 +15,7 @@ return {
 		-- signs_column_numbers = false,
 		signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
 		numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
-		linehl = true, -- Toggle with `:Gitsigns toggle_linehl`
+		linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
 		word_diff = false, -- Toggle with `:Gitsigns toggle_word_diff`
 		watch_gitdir = {
 			interval = 1000,
@@ -36,12 +36,31 @@ return {
 		max_file_length = 40000, -- Disable if file is longer than this (in lines)
 		preview_config = {
 			-- Options passed to nvim_open_win
-			border = "single",
+			border = "rounded",
 			style = "minimal",
 			relative = "cursor",
 			row = 0,
 			col = 1,
 		},
 	},
+	keys = {
+		{
+			"<Leader>gh",
+			function()
+				require("gitsigns").preview_hunk()
+			end,
+			desc = "[G]it [H]unk",
+		},
+		{
+			"<Leader>gb",
+			function()
+				require("gitsigns").toggle_current_line_blame()
+			end,
+			desc = "[G]it [B]lame",
+		},
+	},
+	vim.api.nvim_set_hl(0, "GitSignsCurrentLineBlame", {
+		ctermfg = 240,
+		italic = true,
+	}),
 }
-

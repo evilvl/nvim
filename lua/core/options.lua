@@ -43,7 +43,7 @@ vim.opt.splitbelow = true -- Place new windows below the current one
 vim.o.completeopt = "menuone,noselect" -- Show completion menu even if there is only one match, do not select the first match automatically
 
 -- GUI Colors
-vim.o.termguicolors = true -- Enable true color support
+vim.o.termguicolors = false -- Enable true color support
 
 -- Character Space/Escaping
 -- vim.opt.list = true        -- Show invisible characters
@@ -55,4 +55,3 @@ vim.opt.fillchars = { eob = " " } -- Replace the tilde symbol at the end of the 
 -- Encoding
 vim.o.encoding = "utf-8" -- Set the character encoding to UTF-8
 vim.o.fileencoding = "utf-8" -- Set the file encoding to UTF-8
-
