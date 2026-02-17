@@ -33,13 +33,13 @@ return {
 		local wk = require("which-key")
 		wk.setup(opts)
 
-		wk.register({
-			["<leader>c"] = { name = "[C]ode" },
-			["<leader>f"] = { name = "[F]ind" },
-			["<leader>g"] = { name = "[G]it" },
-			["<leader>l"] = { name = "[L]SP" },
-			["<leader>w"] = { name = "[W]orkspace" },
-			["<leader>s"] = { name = "[S]earch" },
+		wk.add({
+			{ "<leader>c", group = "[C]ode" },
+			{ "<leader>f", group = "[F]ind" },
+			{ "<leader>g", group = "[G]it" },
+			{ "<leader>l", group = "[L]SP" },
+			{ "<leader>w", group = "[W]orkspace" },
+			{ "<leader>s", group = "[S]earch" },
 		})
 	end,
 }
