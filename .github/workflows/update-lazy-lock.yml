@@ -24,9 +24,15 @@ jobs:
           neovim: true
           version: stable
 
+      - name: Setup config path
+        run: |
+          # Создаём symlink в ~/.config/nvim чтобы nvim нашёл config
+          mkdir -p ~/.config
+          ln -sf "${GITHUB_WORKSPACE}" ~/.config/nvim
+
       - name: Update plugins
         run: |
-          nvim --headless -u scripts/ci_update.lua
+          nvim --headless -c "lua require('lazy').sync({wait=true})" -c "qa"
         timeout-minutes: 15
 
       - name: Check for changes
