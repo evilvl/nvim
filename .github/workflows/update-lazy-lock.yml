@@ -1,0 +1,48 @@
+name: Update lazy-lock.json
+
+on:
+  schedule:
+    # Запуск каждый понедельник в 00:00 UTC
+    - cron: "0 0 * * 1"
+  workflow_dispatch: # Возможность ручного запуска
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  update-lazy-lock:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Neovim
+        uses: rhysd/action-setup-vim@v1
+        with:
+          neovim: true
+          version: stable
+
+      - name: Update Lazy plugins
+        run: |
+          nvim --headless "+Lazy! sync" +qa
+        timeout-minutes: 10
+
+      - name: Check for changes
+        id: git-check
+        run: |
+          git diff --quiet lazy-lock.json || echo "changes=true" >> $GITHUB_OUTPUT
+
+      - name: Create Pull Request
+        if: steps.git-check.outputs.changes == 'true'
+        uses: peter-evans/create-pull-request@v6
+        with:
+          commit-message: "chore: update lazy-lock.json"
+          title: "chore: update lazy-lock.json"
+          body: |
+            Автоматическое обновление lock-файла плагинов Neovim.
+            Запущено workflow `${{ github.workflow }}`.
+          branch: lazy-lock-update
+          delete-branch: true
+          base: master
