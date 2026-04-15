@@ -25,4 +25,9 @@ require("lazy").setup({
 	rocks = {
 		enabled = false,
 	},
+	performance = {
+		gap = {
+			close = vim.fn.has("gui_running") == 1,
+		},
+	},
 })

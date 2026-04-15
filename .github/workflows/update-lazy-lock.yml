@@ -24,13 +24,9 @@ jobs:
           neovim: true
           version: stable
 
-      - name: Bootstrap lazy.nvim
-        run: |
-          nvim --headless -c "q" 2>&1 || true
-
       - name: Update plugins
         run: |
-          nvim --headless -c "source scripts/update_plugins.lua" -c "qa" 2>&1 || true
+          nvim --headless -u scripts/ci_update.lua
         timeout-minutes: 15
 
       - name: Check for changes
