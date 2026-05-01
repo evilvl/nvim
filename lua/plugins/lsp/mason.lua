@@ -14,7 +14,6 @@ return {
     opts = {
       ensure_installed = {
         "lua_ls",
-        "bashls",
       },
       automatic_installation = true,
     },

@@ -15,6 +15,7 @@ return {
 				"markdown",
 				"markdown_inline",
 				"regex",
+        "nix",
 			},
 			auto_install = false,
 			highlight = { enable = true },
