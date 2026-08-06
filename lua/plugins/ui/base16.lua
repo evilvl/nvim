@@ -5,14 +5,18 @@ return {
 		require("gruvbox").setup({
 			contrast = "hard",
 			overrides = {
+				-- FloatBorder darker
 				NormalFloat = { link = "Normal" },
 				FloatBorder = { link = "Normal" },
+
+				-- DiagnosticSignHint NONE bg
+				SignColumn = { bg = "NONE" },
+				DiagnosticSignError = { bg = "NONE" },
+				DiagnosticSignWarn = { bg = "NONE" },
+				DiagnosticSignInfo = { bg = "NONE" },
+				DiagnosticSignHint = { bg = "NONE" },
 			},
 		})
-
 		vim.cmd.colorscheme("gruvbox")
-		vim.api.nvim_set_hl(0, "NormalFloat", { link = "Normal" })
-		vim.api.nvim_set_hl(0, "SnacksTerminal", { link = "Normal" })
-		vim.api.nvim_set_hl(0, "SnacksTerminalBorder", { link = "FloatBorder" })
 	end,
 }

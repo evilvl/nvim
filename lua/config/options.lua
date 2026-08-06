@@ -34,6 +34,16 @@ vim.opt.undofile = true -- Enable persistent undo
 
 -- Diagnostic Column
 vim.opt.signcolumn = "yes" -- Always show the sign column
+vim.diagnostic.config({
+	signs = {
+		text = {
+			[vim.diagnostic.severity.ERROR] = " 󰅚",
+			[vim.diagnostic.severity.WARN] = " 󰀪",
+			[vim.diagnostic.severity.INFO] = " 󰋽",
+			[vim.diagnostic.severity.HINT] = " 󰌶",
+		},
+	},
+})
 
 -- Split Behavior
 vim.opt.splitright = true -- Place new windows to the right of the current one
@@ -46,8 +56,13 @@ vim.o.completeopt = "menuone,noselect" -- Show completion menu even if there is 
 vim.o.termguicolors = false -- Enable true color support
 
 -- Character Space/Escaping
--- vim.opt.list = true        -- Show invisible characters
--- vim.opt.listchars = { tab = '» ', nbsp = '␣' }  -- Define characters for invisible characters
+vim.opt.list = true -- Show invisible characters
+vim.opt.listchars = {
+	multispace = "·",
+	leadmultispace = "·",
+	tab = "→ ",
+	trail = "•",
+} -- Define characters for invisible characters
 
 -- Hide Tilde Symbol
 vim.opt.fillchars = { eob = " " } -- Replace the tilde symbol at the end of the buffer with a space

@@ -26,12 +26,12 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			nix = { "nixfmt" },
-      kdl = { "kdlfmt" },
+			kdl = { "kdlfmt" },
 
 			c = { "clang-format" },
 			cpp = { "clang-format" },
 
-			python = { "isort", "ruff_format" },
+			python = { "isort", "mypy", "ty", "ruff_format" },
 
 			javascript = { { "prettierd", "prettier" } },
 			typescript = { { "prettierd", "prettier" } },
