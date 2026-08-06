@@ -23,6 +23,7 @@ return {
     "WhoIsSethDaniel/mason-tool-installer.nvim",
     opts = {
       ensure_installed = {
+        "kdlfmt",
         "stylua",
         "shellcheck",
         "shfmt",

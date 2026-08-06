@@ -26,6 +26,7 @@ return {
 		formatters_by_ft = {
 			lua = { "stylua" },
 			nix = { "nixfmt" },
+      kdl = { "kdlfmt" },
 
 			c = { "clang-format" },
 			cpp = { "clang-format" },
