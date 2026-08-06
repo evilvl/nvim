@@ -1,6 +1,7 @@
 return {
 	"folke/which-key.nvim",
 	event = "VeryLazy",
+
 	opts = {
 		delay = 200,
 
@@ -15,31 +16,35 @@ return {
 			},
 		},
 
+		icons = {
+			mappings = true,
+		},
+
 		win = {
 			border = "rounded",
-			padding = { 1, 2 },
+			padding = { 0, 1 },
 		},
 
 		layout = {
-			width = { min = 20 },
-			spacing = 4,
+			width = {
+				min = 24,
+				max = 40,
+			},
+			spacing = 3,
 		},
 
 		filter = function(mapping)
 			return mapping.desc and mapping.desc ~= ""
 		end,
-	},
-	config = function(_, opts)
-		local wk = require("which-key")
-		wk.setup(opts)
 
-		wk.add({
+		spec = {
+			{ "<leader>b", group = "[B]uffer" },
 			{ "<leader>c", group = "[C]ode" },
 			{ "<leader>f", group = "[F]ind" },
 			{ "<leader>g", group = "[G]it" },
 			{ "<leader>l", group = "[L]SP" },
-			{ "<leader>w", group = "[W]orkspace" },
 			{ "<leader>s", group = "[S]earch" },
-		})
-	end,
+			{ "<leader>w", group = "[W]orkspace" },
+		},
+	},
 }

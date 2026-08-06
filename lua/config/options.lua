@@ -11,7 +11,7 @@ vim.opt.wrap = true -- Enable line wrapping
 vim.o.shell = os.getenv("SHELL") -- Set the shell to the user's default shell
 
 -- Search Settings
-vim.opt.hlsearch = false -- Do not highlight all matches on previous search pattern
+vim.opt.hlsearch = true -- Do not highlight all matches on previous search pattern
 vim.opt.ignorecase = true -- Ignore case in search patterns
 vim.opt.smartcase = true -- Override ignorecase if search pattern contains uppercase letters
 
